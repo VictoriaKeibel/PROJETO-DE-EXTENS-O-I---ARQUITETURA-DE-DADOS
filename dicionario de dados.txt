@@ -1,0 +1,45 @@
+Dicionário de Dados
+
+Tabela: Cliente
+Descrição: Tabela contendo informações dos clientes
+‘IDCLIENTE’ (Chave primária, inteiro, auto incremente) ID único do cliente.
+‘NOME’(Varchar) Nome completo do cliente.
+‘EMAIL’(Varchar, unique) Email único do cliente.
+
+Tabela: Endereço
+Descrição: Tabela contendo informações sobre o endereço dos clientes
+‘IDENDERECO’(Chave primária, inteiro, auto incremente) ID único do endereço.
+‘RUA’(Varchar, not null) Nome da rua.
+‘BAIRRO’(Varchar, not null) Nome do bairro.
+‘CIDADE’(Varchar, not null) Nome da cidade.
+‘ESTADO’(Char, not null) Sigla do estado.
+‘N_CASA’(Varchar, not null) Número da casa.
+‘ID_ENDERECO’(Chave estrangeira) Chave que se relaciona com a tabela cliente.
+
+Tabela: Pedido
+Descrição: Tabela contendo informações sobre os pedidos
+‘IDPEDIDO’(Chave primária, inteiro, auto incremente) ID único do pedido.
+‘JOGO’ (Varchar, not null) Nome do jogo, campo não nulo. 
+‘VALOR_PEDIDO’ (Float, not null) Valor final do pedido, não nulo.
+ ‘VALOR_ENTREGA’  (Float) Valor da entrega.
+ ‘ DATA_ENTREGA’  (Date) Data da entrega do jogo.
+ ‘FORMA_PAGAMENTO’ (Enum) Escolha a forma de pagamento.
+‘ ID_PEDIDO’ (Chave estrangeira) Chave que se relaciona com a tabela cliente.
+
+Tabela: Produto
+Descrição: Tabela contendo as informações sobre os jogos.
+‘IDPRODUTO’  (Chave primária, inteiro, auto incremente) ID único do produto.
+‘NOME_JOGO’(Varchar, not null) Nome do produto, campo não nulo.
+‘CATEGORIA’ (Varchar, not null) Descreve se o produto é novo ou usado.
+ ‘CONSOLE’ (Enum) determina o console.      
+ ‘QNTD_ESTOQUE’(Inteiro) Quantidade de itens no estoque.
+ ‘PRECO_CUSTO’  (Float) Valor de custo.
+‘ PRECO_VENDA’  (Float) Valor da venda.
+‘ LUCRO’(Float) Valor do lucro.
+
+Tabela: Telefone
+Descrição: Tabela contendo as informações sobre os números de telefone.
+‘IDTELEFONE’(Chave primária, inteiro, auto incremente) ID único do telefone.
+‘TIPO’(Enum) Determina o tipo.
+‘NUMERO’(Varchar, not null) Número de telefone.
+‘ID_TELEFONE’(Chave estrangeira) Chave que se relaciona com a tabela cliente.
